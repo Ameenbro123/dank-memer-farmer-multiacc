@@ -60,7 +60,7 @@ def spam(token):
     else:
       pass
 for i in tokens:
-  th.Thread(target=spam, args=(i,))
+  (th.Thread(target=spam, args=(i,))).start()
 try:
   while True: time.sleep(1)
 except KeyboardInterrupt:
