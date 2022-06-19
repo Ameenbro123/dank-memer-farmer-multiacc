@@ -1,14 +1,9 @@
-from ctypes.wintypes import tagMSG
 import time
 import random
 import os
 import requests
-from pyautogui import *
-import pyautogui
 import threading as th
-import keyboard
 import numpy as np
-import win32api, win32con
 import sys
 
 tokens = (open("tokens.txt","r).readlines()).strip()
@@ -27,11 +22,6 @@ payload4 = {
 def randtime():
   time.sleep(random.randint(2,4))
 i = 0
-def click(x,y):
-  win32api.SetCursorPos((x,y))
-  win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
-  time.sleep(0.1)
-  win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
 def spam(token):
   header = {
     'authorization': token
